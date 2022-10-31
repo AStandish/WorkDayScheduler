@@ -4,7 +4,7 @@ $("#currentDay").text(currentDay);
 function colorBlock() {
   $(".time-block").each(function () {
     let currentTime = moment().hour();
-    timeColor = parseInt($(this).attr("id"));
+    let timeColor = parseInt($(this).attr("id"));
 
     if (timeColor < currentTime) {
       $(this).removeClass(["present", "future"]).addClass("past");
@@ -33,8 +33,8 @@ $(document).ready(function () {
   getData();
 
   $(".saveBtn").on("click", function () {
-    const text = $(this).siblings(".description").val();
-    const time = $(this).parent().attr("id");
+    let text = $(this).siblings(".description").val();
+    let time = $(this).parent().attr("id");
     localStorage.setItem(time, text);
 
     localStorage.setItem(time, text);
